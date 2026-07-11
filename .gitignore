@@ -1,0 +1,23 @@
+# Python Environments & Cache
+venv/
+env/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Machine Learning Artifacts
+*.pth
+*.pt
+data/
+
+# Node & Frontend
+node_modules/
+dist/
+.npm/
+
+# OS Generated
+.DS_Store
+Thumbs.db
+
+# Environment Variables
+.env

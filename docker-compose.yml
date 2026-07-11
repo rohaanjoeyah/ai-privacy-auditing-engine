@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  backend:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: privacy-engine-backend
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    volumes:
+      # Mounts your local directory so saved models persist outside the container
+      - .:/app
+
+  frontend:
+    build:
+      context: ./privacy-dashboard
+      dockerfile: Dockerfile
+    container_name: privacy-engine-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
